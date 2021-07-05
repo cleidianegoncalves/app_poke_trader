@@ -1,0 +1,22 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+trade:
+    path: /trade
+    controller: App\Controller\TradeController::index
+    
+trade_verify:
+    path: /verify
+    controller: App\Controller\TradeController::verify
+    
+trade_add_pokemon:
+    path: /addPokemon
+    controller: App\Controller\TradeController::addPokemon
+
+trade_history:
+    path: /history
+    controller: App\Controller\TradeController::history
+    
+trade_show:
+    path: /show/{id}
+    controller: App\Controller\TradeController::show
