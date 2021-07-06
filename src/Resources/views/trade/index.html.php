@@ -150,6 +150,11 @@
     <form action="/verify" method="POST" name="pokemon_form" onsubmit="submitForm(event, false)">
         <div class="row">
             <div class="col">
+                <label class="form-text"> De um lado selecione os pokemons que deseja trocar e do outro os quais deseja adquirir.</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
                 <select class="form-select" id="left" onchange="addPokemon('left', this)">
                     <option value="0" disabled selected="">-Selecione-</option>
                     <?php foreach ($pokemons as $key => $pokemon) { ?>
@@ -195,8 +200,6 @@
         </div>
     </form>
 
-
-
     <div id="div_model_pokemon" style="display:none; border: 1px solid lightgray;">
         <div class="container">
             <div class="row">
@@ -235,5 +238,4 @@
             </div>
         </div>
     </div>
-
 </div>

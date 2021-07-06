@@ -37,7 +37,7 @@ class TradeRepository extends ServiceEntityRepository
      * @param int $limit
      * @return Paginator
      */
-    public function paginate($qb, $page = 1, $limit = 12)
+    public function paginate($qb, $page = 1, $limit = Trade::COUNT_PER_PAGE)
     {
         $paginator = new Paginator($qb);
 

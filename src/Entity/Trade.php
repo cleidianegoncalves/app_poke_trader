@@ -46,6 +46,9 @@ class Trade
      * @ORM\Column(type="datetime")
      */
     private $date_insert;
+    
+    const COUNT_PER_PAGE = 10;
+    const ACCURACY = 30;
 
     public function getId(): ?int
     {

@@ -31,9 +31,8 @@ class TradeController extends AbstractController
         $page = (isset($data["PAGE"]) ? $data["PAGE"] : 1);
         $trades = $repository->findAllQueryBuilder($page);
 
-        ### count total
         $total = count($repository->findAll());
-        $totalPage = round($total / 12);
+        $totalPage = ceil($total / Trade::COUNT_PER_PAGE);
         $pages = array();
         for ($i = 1; $i <= $totalPage; $i++) {
             $pages[] = $i;
@@ -89,7 +88,7 @@ class TradeController extends AbstractController
 
     public function verifyIsFair($total_left, $total_right)
     {
-        $accuracy = 20;
+        $accuracy = Trade::ACCURACY;
         $diferencaXP = $total_left - $total_right;
         if ($diferencaXP <= $accuracy && $diferencaXP >= -$accuracy) {
             return true;

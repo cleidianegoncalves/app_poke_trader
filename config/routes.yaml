@@ -1,6 +1,6 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+    path: /
+    controller: App\Controller\TradeController::index
 trade:
     path: /trade
     controller: App\Controller\TradeController::index
