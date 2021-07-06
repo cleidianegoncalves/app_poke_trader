@@ -1,0 +1,27 @@
+version: '2'
+
+services:
+  poke_trader:
+    image: docker.io/bitnami/symfony:1
+    container_name: symfony_poke_trader
+    ports:
+      - '8000:8000'
+    volumes:
+      - '.:/app'
+    environment:
+      - SYMFONY_PROJECT_NAME=app_poke_trader
+      - MARIADB_HOST=mariadb
+      - MARIADB_PORT_NUMBER=3306
+      - MARIADB_USER=admin_trade
+      - MARIADB_PASSWORD=321321
+      - MARIADB_DATABASE=app_poke_trader
+    depends_on:
+      - mariadb
+  mariadb:
+    image: docker.io/bitnami/mariadb:10.3
+    container_name: mariadb_poke_trader
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_USER=admin_trade
+      - MARIADB_PASSWORD=321321
+      - MARIADB_DATABASE=app_poke_trader
